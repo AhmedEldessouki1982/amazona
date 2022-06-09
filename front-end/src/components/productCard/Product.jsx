@@ -1,9 +1,15 @@
 import React from 'react';
+import './product.scss';
 
-export default function Product () {
+
+export default function Product (props) {
+    let thePic = props.pic;
     return (
-        <>
-            <h1>product</h1>
-        </>
+        <div className='Product__container'>
+            <img src= {thePic} alt={props.slug}/>
+            <a href="/"> { props.link } </a>
+            <p> ${props.price} </p>
+            <button> Add to Cart</button> 
+        </div>
     )
 }

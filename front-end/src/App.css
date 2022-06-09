@@ -3,3 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.featured__products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
