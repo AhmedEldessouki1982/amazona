@@ -34,6 +34,7 @@ export default function App() {
                   link = {product.name}
                   price = {product.price}
                   slug = {product.slug}
+                  rate = {product.rating}
                   />
                 )
               )
