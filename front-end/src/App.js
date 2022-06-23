@@ -41,7 +41,7 @@ export default function App() {
             }
           </div>
         }/>
-        <Route path='/products/:product' element = { <ProductDetails/> } />
+        <Route path='/products/:product' element = { <ProductDetails data = { {theData} } /> } />
       </Routes>
     </>
   );
