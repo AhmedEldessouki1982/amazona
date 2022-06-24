@@ -9,7 +9,7 @@ export const data = {
       countInStock: 10,
       brand: 'Nike',
       rating: 4.5,
-      numReviews: 10,
+      numReviews: 5,
       description: 'high quality shirt',
     },
     {
@@ -21,7 +21,7 @@ export const data = {
       countInStock: 20,
       brand: 'Adidas',
       rating: 3,
-      numReviews: 10,
+      numReviews: 100,
       description: 'high quality product',
     },
     {
@@ -45,7 +45,7 @@ export const data = {
       countInStock: 5,
       brand: 'Puma',
       rating: 5,
-      numReviews: 10,
+      numReviews: 50,
       description: 'high quality product',
     },
   ],

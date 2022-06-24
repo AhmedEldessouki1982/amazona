@@ -6,6 +6,7 @@
 .product__container {
     display: flex;
     flex-wrap: wrap;
+    box-sizing: border-box;
 
 
     .product__pic {
@@ -22,10 +23,44 @@
 
     .product__details{
         height: 15rem;
-        width: 22rem;
-        background-color: rgb(42, 165, 138);
-        margin-left: 1.5rem;
+        width: 28rem;
+        background-color: rgb(247, 250, 249);
+        border-radius: 3px;
+        margin-left: 1rem;
         margin-top: 1.5rem;
+
+        :nth-child(1) {
+            font-size: 30px;
+            // margin-top: 10px;
+            color: cadetblue;
+            text-transform: uppercase;
+            justify-self: center;
+            text-align: center;
+        }
+        .rating {
+            display: flex;
+            font-size: 20px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+            border-top: 1px solid rgb(231, 222, 222);
+            border-bottom: 1px solid rgb(235, 227, 227);
+        }
+
+        .pricing{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .Description {
+                color: cadetblue;
+                font-size: 15px;
+                text-align: center;
+
+            }
+        }
+
 
     }
 
