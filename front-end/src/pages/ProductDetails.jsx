@@ -34,9 +34,23 @@ export default function ProductDetails(props) {
                         <span> Price: ${selectedProduct.price}</span>
                         <span className='Description'> Description:  {selectedProduct.description}</span>
                     </div>
+
+                    
                 </div>
 
-                <div className='product__status'></div>
+                <div className='product__status'>
+                    <div className='action__status__section'>
+                        <button>
+                            Add to Cart
+                        </button>
+                        <span className= {selectedProduct.countInStock === 0 ? 'not__availbale' : 'availbale'}>
+                            {selectedProduct.countInStock === 0? 'Not Avaible' : 'In Stock'}
+                        </span>
+                        <span>QTY: {selectedProduct.countInStock}</span>
+                        <span>Brand: {selectedProduct.brand}</span>
+                        <span>Category: {selectedProduct.category}</span>
+                    </div>
+                </div>
             </div>
         </>
     )
