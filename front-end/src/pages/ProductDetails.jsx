@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import './ProductDetails.scss';
 import Rating from '../components/rating/Rating';
+import { Store } from '../components/Store/Storeprovider';
 
 
 export default function ProductDetails(props) {
@@ -12,6 +13,18 @@ export default function ProductDetails(props) {
     let selectedProduct = props.data.theData.find (
         ({slug}) => slug === product
     );
+
+    //consume the context
+    let storeContext = React.useContext (Store);
+    
+    let handleAddToCartAction = () => {
+        storeContext.dispatch (
+            {
+                type: "ADD_TO_CART",
+                cartContents: [selectedProduct.slug]
+            }
+        )
+    }
 
     return (
         <>
@@ -40,7 +53,7 @@ export default function ProductDetails(props) {
 
                 <div className='product__status'>
                     <div className='action__status__section'>
-                        <button>
+                        <button onClick={handleAddToCartAction}>
                             Add to Cart
                         </button>
                         <span className= {selectedProduct.countInStock === 0 ? 'not__availbale' : 'availbale'}>
