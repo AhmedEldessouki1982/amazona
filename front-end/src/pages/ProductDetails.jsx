@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './ProductDetails.scss';
 import Rating from '../components/rating/Rating';
 import { Store } from '../components/Store/Storeprovider';
-
+import removeDublicate from '../utils/removeDublicate.js'
 
 export default function ProductDetails(props) {
    
@@ -21,10 +21,14 @@ export default function ProductDetails(props) {
         storeContext.dispatch (
             {
                 type: "ADD_TO_CART",
-                cartContents: [selectedProduct.slug]
+                cartContents: selectedProduct.slug,
+                cartDetails: removeDublicate(storeContext.storeState.cart)
             }
         )
     }
+       
+
+    // console.log(removeDublicate(storeContext.storeState.cart));
 
     return (
         <>
