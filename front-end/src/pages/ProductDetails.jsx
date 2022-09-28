@@ -3,12 +3,9 @@ import { useParams } from 'react-router-dom';
 import './ProductDetails.scss';
 import Rating from '../components/rating/Rating';
 import { Store } from '../components/Store/Storeprovider';
-import removeDublicate from '../utils/removeDublicate.js'
 
 export default function ProductDetails(props) {
-   
     let {product} = useParams ();
-
     //by destructure of slug property from the data object
     let selectedProduct = props.data.theData.find (
         ({slug}) => slug === product
@@ -16,20 +13,15 @@ export default function ProductDetails(props) {
 
     //consume the context
     let storeContext = React.useContext (Store);
-    
+
     let handleAddToCartAction = () => {
         storeContext.dispatch (
             {
                 type: "ADD_TO_CART",
                 cartContents: selectedProduct.slug,
-                cartDetails: removeDublicate(storeContext.storeState.cart)
             }
         )
     }
-       
-
-    // console.log(removeDublicate(storeContext.storeState.cart));
-
     return (
         <>
             <h1 className='product__title'>{product}</h1>

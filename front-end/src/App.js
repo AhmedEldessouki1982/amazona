@@ -5,6 +5,7 @@ import Product from './components/productCard/Product';
 import ProductDetails from './pages/ProductDetails';
 import { Routes , Route} from 'react-router-dom';
 import axios from 'axios';
+import Cart from './components/Cart/Cart';
 
 export default function App() {
   let [products , setProducts] = React.useState([]);
@@ -42,6 +43,8 @@ export default function App() {
           </div>
         }/>
         <Route path='/products/:product' element = { <ProductDetails data = { {theData} } /> } />
+        <Route path='/cart' element = { <Cart /> } />
+        
       </Routes>
     </>
   );
