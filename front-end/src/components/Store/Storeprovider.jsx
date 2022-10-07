@@ -8,7 +8,7 @@ let storeInitValue = {
 let reducer = (storeState, action) => {
     switch (action.type) {
         case 'ADD_TO_CART':
-            return {...storeState, cart: [...storeState.cart,action.cartContents]}
+            return {...storeState, cart: [...storeState.cart,action.cartContents],price:action.price}
         case 'CART_DETAILS':
             return {...storeState, qty: action.cartDetails}
         default:

@@ -19,6 +19,7 @@ export default function ProductDetails(props) {
             {
                 type: "ADD_TO_CART",
                 cartContents: selectedProduct.slug,
+                price: selectedProduct.price
             }
         )
     }
@@ -43,8 +44,6 @@ export default function ProductDetails(props) {
                         <span> Price: ${selectedProduct.price}</span>
                         <span className='Description'> Description:  {selectedProduct.description}</span>
                     </div>
-
-                    
                 </div>
 
                 <div className='product__status'>

@@ -43,7 +43,7 @@ export default function App() {
           </div>
         }/>
         <Route path='/products/:product' element = { <ProductDetails data = { {theData} } /> } />
-        <Route path='/cart' element = { <Cart /> } />
+        <Route path='/cart' element = { <Cart data = {{theData}}/> } />
         
       </Routes>
     </>
