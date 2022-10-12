@@ -13,7 +13,6 @@ export default function Cart (props) {
             )
         }
     )
-
     return (
         <>
             <h1>cart</h1>
@@ -26,11 +25,17 @@ export default function Cart (props) {
                                 <div>
                                     <p>{selectedProduct.slug}</p>
                                     <span>
-                                        <button>+</button>
-                                        <p>{selectedProduct.price}</p>
-                                        <button>-</button>
+                                        <p style = {{color:"blue"}}>{`unit price ${selectedProduct.price}$`}</p>
                                     </span>
-                                <h4>{`Total for this item ${1500}$`}</h4>
+                                {
+                                    Object.keys(itemsQTY).map(
+                                        item => (
+                                            selectedProduct.slug === item &&
+                                            <h4 key ={item}>QTY:{itemsQTY[item]} / 
+                                            Total Price: {itemsQTY[item]*selectedProduct.price}$</h4>
+                                        )
+                                    )
+                                }                                
                             </div>
                         </div>
                     )

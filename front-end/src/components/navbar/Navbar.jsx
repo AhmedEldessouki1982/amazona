@@ -20,7 +20,7 @@ export default function Navbar () {
     return (
         <>
             <div className='Navbar__header'>
-                <Link to="/">Amazona</Link>
+                <Link to="/">eldessouki</Link>
                 <Link to="/cart">
                     <div className='Navbar__icons' onClick={onClickCartHandler}>
                         <span>Cart
